@@ -3,6 +3,7 @@
 **/*.frag
 **/*.vert
 
+.idea
+node_modules
 working
 
-.idea
