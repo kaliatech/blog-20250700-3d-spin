@@ -1,0 +1,27 @@
+{
+  "name": "blog-20250700-3d-spin",
+  "version": "1.0.0",
+  "description": "Used  for 20250700 Post.",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dist": "npm run clean && jake dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaliatech/blog-20250700-3d-spin.git"
+  },
+  "author": "Josh Sanderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaliatech/blog-20250700-3d-spin/issues"
+  },
+  "homepage": "https://github.com/kaliatech/blog-20250700-3d-spin#readme",
+  "devDependencies": {
+    "jake": "^10.9.2",
+    "rimraf": "^6.0.1"
+  },
+  "workspaces": [
+    "babylon-custom-viewer"
+  ]
+}
