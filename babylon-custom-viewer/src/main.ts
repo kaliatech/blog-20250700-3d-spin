@@ -1,11 +1,12 @@
 import './style.css'
-import { setupCounter } from './counter.ts'
+import {initBabylon} from './initBabylon.ts'
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-  <p>Test</p>
-  <button id="counter">Counter</button>
+  <div class="viewer-container">
+    <div class="square-container">
+      <canvas id="bjsCanvas"></canvas>
+    </div>
   </div>
 `
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+initBabylon(document.querySelector<HTMLCanvasElement>('#bjsCanvas')!)

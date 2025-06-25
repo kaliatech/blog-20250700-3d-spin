@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "clean": "rimraf dist-gh-pages",
-    "dist": "npm run clean && jake copy-dist-gh-pages"
+    "build": "npm run build --workspace=babylon-custom-viewer",
+    "dist": "npm run build && npm run clean && jake copy-dist-gh-pages"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,10 @@
   },
   "homepage": "https://github.com/kaliatech/blog-20250700-3d-spin#readme",
   "devDependencies": {
+    "@babylonjs/inspector": "^8.14.0",
     "fs-extra": "^11.3.0",
     "jake": "^10.9.2",
+    "prettier": "^3.6.1",
     "rimraf": "^6.0.1"
   },
   "workspaces": [
