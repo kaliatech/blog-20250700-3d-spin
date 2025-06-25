@@ -1,0 +1,8 @@
+**/build/*
+**/dist/*
+**/*.frag
+**/*.vert
+
+working
+
+.idea
