@@ -1,6 +1,5 @@
 import './style.css'
-import {initBabylon} from './initBabylon.ts'
-
+import { initBabylon } from './initBabylon.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="viewer-container">

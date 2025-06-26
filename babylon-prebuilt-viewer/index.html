@@ -1,29 +1,31 @@
 <html lang="en">
-<head>
-  <style>
-    .container {
-      width: 90vw;
-      height: 90vh;
-      max-width: 90%;
-      max-height: 90%;
-      aspect-ratio: 1 / 1;
-      margin: auto; /* optional: centers it in the parent/viewport */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
-<body>
-<script src="https://cdn.jsdelivr.net/npm/@babylonjs/viewer/dist/babylon-viewer.esm.min.js" type="module"></script>
-<div class="container">
-  <babylon-viewer environment="none"
-                  source="ao-logo-3d-001.glb"
-                  exposure="0.7"
-                  camera-orbit="1.25 1.5 3"
-                  camera-target="0 -0.1 0"
-                  camera-auto-orbit
-                  camera-auto-orbit-speed="1"
-  ></babylon-viewer>
-</div>
-</body>
+  <head>
+    <style>
+      .container {
+        width: 90vw;
+        height: 90vh;
+        max-width: 90%;
+        max-height: 90%;
+        aspect-ratio: 1 / 1;
+        margin: auto; /* optional: centers it in the parent/viewport */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/@babylonjs/viewer/dist/babylon-viewer.esm.min.js" type="module"></script>
+    <div class="container">
+      <babylon-viewer
+        environment="none"
+        source="ao-logo-3d-001.glb"
+        exposure="0.7"
+        camera-orbit="1.25 1.5 3"
+        camera-target="0 -0.1 0"
+        camera-auto-orbit
+        camera-auto-orbit-speed="1"
+      ></babylon-viewer>
+    </div>
+  </body>
 </html>

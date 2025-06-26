@@ -2,11 +2,13 @@
   "name": "blog-20250700-3d-spin",
   "version": "1.0.0",
   "description": "Used  for 20250700 Post.",
-  "main": "main.js",
+  "type": "module",
   "scripts": {
     "clean": "rimraf dist-gh-pages",
     "build": "npm run build --workspace=babylon-custom-viewer",
-    "dist": "npm run build && npm run clean && jake copy-dist-gh-pages"
+    "dist": "npm run build && npm run clean && jake copy-dist-gh-pages",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md,html,css}\"",
+    "lint": "eslint . --ext .js,.ts,.tsx"
   },
   "repository": {
     "type": "git",
@@ -18,14 +20,20 @@
     "url": "https://github.com/kaliatech/blog-20250700-3d-spin/issues"
   },
   "homepage": "https://github.com/kaliatech/blog-20250700-3d-spin#readme",
+  "workspaces": [
+    "babylon-custom-viewer"
+  ],
   "devDependencies": {
     "@babylonjs/inspector": "^8.14.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
     "fs-extra": "^11.3.0",
     "jake": "^10.9.2",
     "prettier": "^3.6.1",
-    "rimraf": "^6.0.1"
-  },
-  "workspaces": [
-    "babylon-custom-viewer"
-  ]
+    "prettier-plugin-jsdoc": "^1.3.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0"
+  }
 }

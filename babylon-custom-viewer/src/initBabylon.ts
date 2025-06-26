@@ -11,8 +11,6 @@ import { Mesh } from '@babylonjs/core'
 import '@babylonjs/loaders/glTF/2.0'
 
 export function initBabylon(canvasEl: HTMLCanvasElement) {
-
-
   // Initialize Babylon.js engine
   const engine = new Engine(canvasEl, true, {}, true)
   window.addEventListener('resize', () => {
@@ -25,14 +23,8 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
   scene.clearColor = new Color4(0, 0, 0, 0)
 
   // Setup camera
-  const camera = new ArcRotateCamera(
-    'Camera',
-    Tools.ToRadians(90),
-    Tools.ToRadians(90),
-    2,
-    new Vector3(0, 0, 0),
-    scene,
-  )
+  const camera = new ArcRotateCamera('Camera', Tools.ToRadians(90), Tools.ToRadians(90), 2, new Vector3(0, 0, 0), scene)
+
   camera.wheelDeltaPercentage = 0.01
   camera.attachControl(true)
 
@@ -41,7 +33,11 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
 
   // Load the glTF model
   let logoMesh: Mesh | null = null
-  LoadAssetContainerAsync('https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-001.glb', scene, { name: 'aologo' }).then((container) => {
+  LoadAssetContainerAsync(
+    'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-001.glb',
+    scene,
+    { name: 'aologo' },
+  ).then((container) => {
     container.addAllToScene()
     if (container.meshes.length > 0) {
       logoMesh = container.meshes[0] as Mesh
@@ -66,7 +62,7 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
     }
   })
 
-//  Inspector.Show(scene, {})
+  //  Inspector.Show(scene, {})
 
   return scene
 }
