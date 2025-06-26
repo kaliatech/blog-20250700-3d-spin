@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist-gh-pages",
-    "build": "npm run build --workspace=babylon-custom-viewer",
-    "dist": "npm run build && npm run clean && jake copy-dist-gh-pages",
-    "format": "prettier --write \"**/*.{js,ts,tsx,json,md,html,css}\"",
-    "lint": "eslint . --ext .js,.ts,.tsx"
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces",
+    "dist": "npm run build && npm run clean && jake copy-dist-gh-pages"
   },
   "repository": {
     "type": "git",
@@ -21,13 +21,16 @@
   },
   "homepage": "https://github.com/kaliatech/blog-20250700-3d-spin#readme",
   "workspaces": [
-    "babylon-custom-viewer"
+    "babylon-custom-viewer",
+    "babylon-logo-configurator"
   ],
   "devDependencies": {
     "@babylonjs/inspector": "^8.14.0",
     "eslint": "^9.29.0",
+    "eslint-plugin-react-dom": "^1.52.2",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-react-x": "^1.52.2",
     "fs-extra": "^11.3.0",
     "jake": "^10.9.2",
     "prettier": "^3.6.1",

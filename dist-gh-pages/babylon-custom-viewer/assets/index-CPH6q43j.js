@@ -1,7 +1,0 @@
-import{E as l,S as d,C as u,A as f,T as a,V as c,H as p,L as m}from"./vendor_babylonjs-CWZrxFqC.js";(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function r(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function o(e){if(e.ep)return;e.ep=!0;const t=r(e);fetch(e.href,t)}})();function g(i){const n=new l(i,!0,{},!0),r=new d(n);r.clearColor=new u(0,0,0,0);const o=new f("Camera",a.ToRadians(90),a.ToRadians(90),2,new c(0,0,0),r);o.wheelDeltaPercentage=.01,o.attachControl(!0);const e=new p("light",new c(0,1,0),r);return e.intensity=1,m("https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-001.glb",r).then(t=>{t.addAllToScene()}),n.runRenderLoop(()=>{r.render()}),window.addEventListener("resize",()=>{n.resize()}),r}document.querySelector("#app").innerHTML=`
-  <div class="viewer-container">
-    <div class="square-container">
-      <canvas id="bjsCanvas"></canvas>
-    </div>
-  </div>
-`;g(document.querySelector("#bjsCanvas"));

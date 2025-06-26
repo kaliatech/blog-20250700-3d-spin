@@ -14,6 +14,11 @@ task('copy-dist-gh-pages', async function () {
   await fse.copy(srcCustom, destCustom);
   console.log('Copied babylon-custom-viewer to dist-gh-pages/babylon-custom-viewer');
 
+  const srcConfigurator = path.join(__dirname, 'babylon-logo-configurator/dist');
+  const destConfigurator = path.join(__dirname, 'dist-gh-pages', 'babylon-logo-configurator');
+  await fse.copy(srcConfigurator, destConfigurator);
+  console.log('Copied babylon-logo-configurator to dist-gh-pages/babylon-logo-configurator');
+
   const srcRoot = path.join(__dirname, 'dist-root');
   const destRoot = path.join(__dirname, 'dist-gh-pages');
   if (fs.existsSync(srcRoot)) {
