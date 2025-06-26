@@ -6,9 +6,17 @@ import { HemisphericLight } from '@babylonjs/core/Lights/hemisphericLight.js'
 import { Color4 } from '@babylonjs/core/Maths/math.color.js'
 import { LoadAssetContainerAsync } from '@babylonjs/core/Loading/sceneLoader.js'
 import { Tools } from '@babylonjs/core/Misc/tools.js'
-import { Mesh } from '@babylonjs/core'
+import { Mesh } from '@babylonjs/core/Meshes/mesh.js'
 
+// This is required for createDefaultEnvironment, but
+// increases bundle size by ~600k gzipped. Marginal value for
+// this demo.
+import '@babylonjs/core/Helpers/sceneHelpers'
+
+// Increases bundle size considerably, but unavoidable.
 import '@babylonjs/loaders/glTF/2.0'
+
+const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-001.glb'
 
 export function initBabylon(canvasEl: HTMLCanvasElement) {
   // Initialize Babylon.js engine
@@ -17,14 +25,13 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
     engine.resize()
   })
 
-  // Create a new scene
+  // Create scene
   const scene = new Scene(engine)
   scene.createDefaultEnvironment({ createGround: false, createSkybox: false })
   scene.clearColor = new Color4(0, 0, 0, 0)
 
-  // Setup camera
+  // Create camera
   const camera = new ArcRotateCamera('Camera', Tools.ToRadians(90), Tools.ToRadians(90), 2, new Vector3(0, 0, 0), scene)
-
   camera.wheelDeltaPercentage = 0.01
   camera.attachControl(true)
 
@@ -33,11 +40,7 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
 
   // Load the glTF model
   let logoMesh: Mesh | null = null
-  LoadAssetContainerAsync(
-    'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-001.glb',
-    scene,
-    { name: 'aologo' },
-  ).then((container) => {
+  LoadAssetContainerAsync(glbModelUrl, scene).then((container) => {
     container.addAllToScene()
     if (container.meshes.length > 0) {
       logoMesh = container.meshes[0] as Mesh
@@ -53,6 +56,8 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
 
     scene.render()
 
+    // Rotate the model.
+    // Babylon uses quaternions for gltf models.
     if (logoMesh) {
       const rotationSpeed = 1 // radians per second
       const deltaQuat = Quaternion.RotationAxis(Vector3.Up(), rotationSpeed * deltaTime)
@@ -62,7 +67,8 @@ export function initBabylon(canvasEl: HTMLCanvasElement) {
     }
   })
 
-  //  Inspector.Show(scene, {})
+  // Useful for debugging:
+  // Inspector.Show(scene, {})
 
   return scene
 }
