@@ -25,7 +25,7 @@ import type { RGBColor } from 'react-color'
 
 const INTERACTION_TIMEOUT_MS = 2000
 
-const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-001.glb'
+const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-006c.glb'
 
 export class BabylonDemo {
   private _engine: Engine | null = null
