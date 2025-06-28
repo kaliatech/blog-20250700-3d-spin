@@ -4,11 +4,11 @@
   "description": "Used  for 20250700 Post.",
   "type": "module",
   "scripts": {
-    "clean": "rimraf dist-gh-pages",
+    "clean": "rimraf dist-gh-pages && npm run clean --workspaces",
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
     "format": "npm run format --workspaces",
-    "dist": "npm run build && npm run clean && jake copy-dist-gh-pages"
+    "dist": "npm run clean && npm run build && jake copy-dist-gh-pages"
   },
   "repository": {
     "type": "git",

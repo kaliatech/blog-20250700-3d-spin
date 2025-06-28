@@ -33,9 +33,9 @@ export function setupMaterials(logoMesh: Mesh) {
   const baseMesh = meshes[BASE_MESH_IDX]
   if (baseMesh && baseMesh.material instanceof PBRMaterial) {
     const color = new Color3(BASE_COLOR.r / 255, BASE_COLOR.g / 255, BASE_COLOR.b / 255)
-    const m = baseMesh.material
-    m.metallic = 0.5
-    m.roughness = 0.2
+    //const m = baseMesh.material
+    // m.metallic = 0.5
+    // m.roughness = 0.2
     //m.emissiveIntensity = 0.5
     updateColor(baseMesh.material, color, BASE_COLOR.a)
   }
@@ -44,9 +44,9 @@ export function setupMaterials(logoMesh: Mesh) {
   if (outerOrbit && outerOrbit.material instanceof PBRMaterial) {
     const color = new Color3(OUTER_ORBIT_COLOR.r / 255, OUTER_ORBIT_COLOR.g / 255, OUTER_ORBIT_COLOR.b / 255)
     const m = outerOrbit.material
-    m.metallic = 0.8
-    m.roughness = 0.2
-    m.emissiveIntensity = 0.5
+    // m.metallic = 0.5
+    // m.roughness = 0.2
+    // m.emissiveIntensity = 0.3
     updateColor(outerOrbit.material, color, OUTER_ORBIT_COLOR.a)
 
     const m2 = meshes[INNER_DOT_IDX] as Mesh
@@ -58,11 +58,10 @@ export function setupMaterials(logoMesh: Mesh) {
   const innerOrbit = meshes[INNER_ORBIT_IDX]
   if (innerOrbit && innerOrbit.material instanceof PBRMaterial) {
     const color = new Color3(INNER_ORBIT_COLOR.r / 255, INNER_ORBIT_COLOR.g / 255, INNER_ORBIT_COLOR.b / 255)
-    const m = innerOrbit.material
-    m.metallic = 0.8
-    m.roughness = 0.2
-    m.emissiveIntensity = 0.5
-    m.emissiveIntensity = 0.5
+    //const m = innerOrbit.material
+    // m.metallic = 0.5
+    // m.roughness = 0.2
+    // m.emissiveIntensity = 0.6
     updateColor(innerOrbit.material, color, INNER_ORBIT_COLOR.a)
   }
 

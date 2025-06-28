@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "clean": "rimraf dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md,html,css}\"",
