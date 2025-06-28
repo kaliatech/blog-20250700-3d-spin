@@ -16,7 +16,7 @@ import '@babylonjs/core/Helpers/sceneHelpers'
 // Increases bundle size considerably, but unavoidable.
 import '@babylonjs/loaders/glTF/2.0'
 
-const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-006c.glb'
+const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-007.glb'
 
 export function initBabylon(canvasEl: HTMLCanvasElement) {
   // Initialize Babylon.js engine

@@ -25,7 +25,7 @@ import type { RGBColor } from 'react-color'
 
 const INTERACTION_TIMEOUT_MS = 2000
 
-const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-006c.glb'
+const glbModelUrl = 'https://kaliatech.github.io/blog-20250700-3d-spin/babylon-prebuilt-viewer/ao-logo-3d-007.glb'
 
 export class BabylonDemo {
   private _engine: Engine | null = null
@@ -161,7 +161,7 @@ export class BabylonDemo {
         console.warn(`No valid material found for control ID: ${controlId}`)
         return
       }
-      updateColor(material, color3, color.a || 1)
+      updateColor(material, color3, color.a === undefined ? 1.0 : color.a)
     }
   }
 }
